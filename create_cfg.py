@@ -22,15 +22,15 @@ from util.loc_dom import *
 ###############################################################################
 
 # domain 01
-case_name_d01 = 'chch_NW_10m'
-centlat_d01 =-43.487
-centlon_d01 = 172.537
-dx_d01 = 10
-dy_d01 = 10
-dz_d01 = 10
-nx_d01 = 360
-ny_d01 = 360
-nz_d01 = 200
+case_name_d01 = 'rj-sim-01-01'
+centlat_d01 = -23.05501
+centlon_d01 = -43.48
+dx_d01 = 200
+dy_d01 = 200
+dz_d01 = 200
+nx_d01 = 180
+ny_d01 = 165
+nz_d01 = 34
 
 # calculate zone of projection for lat/lon calculation
 zone = utm.from_latlon(centlat_d01,centlon_d01)[2]

@@ -35,10 +35,10 @@ start = datetime.now()
 ##-------------------------------- User INPUT -------------------------------##
 ###############################################################################
 
-case_name = 'chch_NW_10m'
+case_name = 'rj-sim-01-01'
 
-wrf_file = 'wrf_output/wrfout_d04_2017-02-10_00.nc'
-
+#wrf_file = '/home/wrf/WRF/DATA/wrfout_d02_2007-04-01_00:00:00.nc'
+wrf_file = '/home/wrf/WRF/rj-sim/wrfout_d01_2006-01-01_00'
 interp_mode = 'linear'
 
 # !!! give start and end time to interpolate WRF output here !!!
@@ -46,8 +46,8 @@ interp_mode = 'linear'
 # 1) WRF output time frequency
 # 2) the desired PALM input updatge frequency
 # Time in UTC
-dt_start = datetime(2017, 2, 11,20,)
-dt_end = datetime(2017, 2, 12, 2,)
+dt_start = datetime(2006, 1, 1, 00,)
+dt_end = datetime(2006, 1, 2, 00,)
 interval = 1
 ts = '1hour'
 
@@ -127,7 +127,6 @@ times = []
 print(f'Loading WRF netCDF: {wrf_file}' )
 ds_wrf = xr.open_dataset(wrf_file)
 nc_wrf = Dataset(wrf_file, 'r')
-
 lat_s = ds_wrf['XLAT'][0,:,0].data
 lon_s = ds_wrf['XLONG'][0,0,:].data
 south_idx, north_idx = nearest(lat_s, south)[1], nearest(lat_s, north)[1]
